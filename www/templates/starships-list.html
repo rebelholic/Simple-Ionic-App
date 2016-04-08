@@ -1,0 +1,18 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="Starships List">
+  <ion-content class="has-header has-subheader">
+        <ion-list>
+            <ion-item ng-repeat="starship in swvar track by $index" type="item-text-wrap" 
+                      href="#/dash/starship/{{starship.name}}">
+               {{starship.name}}
+            </ion-item>
+        </ion-list>
+     <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()"></ion-infinite-scroll>
+
+    </ion-content>
+</ion-view>
